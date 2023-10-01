@@ -108,7 +108,6 @@ app.post("/deletapost", (req, res) => {
         req.flash("error_msg","Ouve um erro ao excluir o Post-card")
     })
 })
-
 app.get("/viewpostweb/:id", (req, res) => {
     Postagens.findOne({ _id: req.params.id }).lean().then((Postagem) => {
         res.render("viewpost", { Postagem: Postagem })
